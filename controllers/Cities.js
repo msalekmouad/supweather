@@ -26,7 +26,7 @@ exports.addCity = (req,res,next) =>{
    user.cities.push(cityId);
    user.save()
     .then(user => {
-        res.status(302)
+        res.status(201)
             .json({
                 success: true
             });

@@ -5,7 +5,8 @@ let server = require("../app.js");
 let should = chai.should();
 chai.use(chaiHttp);
 let AuthController = require("../controllers/Users.js");
-describe('Testing Auth Routes', () => {
+
+describe('----> Testing Auth Routes', () => {
    
    it('it should return unauthorized status code 401', (done) => {
     chai.request(server)
@@ -18,7 +19,6 @@ describe('Testing Auth Routes', () => {
 
      
 
-
   it('it should failed with passing wrong token ', (done)=>{
       chai
         .request(server)
@@ -30,19 +30,30 @@ describe('Testing Auth Routes', () => {
         })
   });
 
+  it('it should return 403 forbidden access',(done)=>{
+    chai
+            .request(server)
+            .post("/api/users/login")
+            .send({
+                email: "mouadmsalek@outlook.com"
+            })
+            .end((err, res) =>{
+                res.should.have.status(403);
+                done();
+                });
+    })
 
-  it('it should return 200 code with an resonse object',()=>{
-
-        const req ={
-            body: {
-                email: "mouadmsalek@outlook.com",
-                password: "Zidane200"
-            }
-        }
-        AuthController.userLogin(req,{}, () => {}).then(res => {
-            res.should.have.status(203);
+    it('it should return 403 forbidden access',(done)=>{
+        chai
+            .request(server)
+            .post("/api/users/register")
+            .send({
+                email: "mouadmsalek@outlook.com"
+            })
+            .end((err, res) =>{
+                res.should.have.status(403);
+                done();
+                });
         });
-
-  })
-
+        
 })

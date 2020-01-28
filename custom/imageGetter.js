@@ -18,12 +18,16 @@ exports.getWeatherImage = (state) =>{
             return `${process.env.APP_URL}images/weather/storm.png`;
         case  "Thunderstorm":
             return `${process.env.APP_URL}images/weather/storm.png`;
+        case  "Dust":
+            return `${process.env.APP_URL}images/weather/cloudy.png`;
         case "Snow":
             return `${process.env.APP_URL}images/weather/snowing.png`;
         case "Clouds":
             return `${process.env.APP_URL}images/weather/cloudy.png`;
         case "Cloudy":
                 return `${process.env.APP_URL}images/weather/cloudy.png`;
-    
+        default:
+            return `${process.env.APP_URL}images/weather/sunny.png`;
+
         }
 }

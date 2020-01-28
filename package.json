@@ -29,8 +29,16 @@
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "pure-react-carousel": "^1.24.1",
+    "react-id-swiper": "^2.4.0",
+    "react-owl-carousel": "^2.3.1",
+    "react-slick": "^0.25.2",
+    "react-toastify": "^5.5.0",
+    "reapop": "^2.1.0",
+    "reapop-theme-bootstrap": "^1.0.2",
     "redux-thunk": "^2.3.0",
     "request": "^2.88.0",
+    "slick-carousel": "^1.8.1",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {

@@ -21,7 +21,7 @@ const limiter = new RateLimit({
     windowMs: 15*60*1000, //15 minutes
     max: 100, //100 request per ip,
 });
-app.use("/api",limiter);
+//app.use("/api",limiter);
 
 //? Protect api from xss attacks
 app.use(xss());
